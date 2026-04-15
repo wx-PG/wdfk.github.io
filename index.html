@@ -425,21 +425,21 @@
             </div>
         </div>
         <div class="insight-grid">
-            <div class="stat-badge"><div class="stat-number">18</div><div class="stat-label">个月深度调研</div></div>
-            <div class="stat-badge"><div class="stat-number">15</div><div class="stat-label">座城市走访</div></div>
-            <div class="stat-badge"><div class="stat-number">108</div><div class="stat-label">乡镇街道调研</div></div>
-            <div class="stat-badge"><div class="stat-number">84</div><div class="stat-label">场交流研讨</div></div>
-            <div class="stat-badge"><div class="stat-number">300+</div><div class="stat-label">家上下游产业</div></div>
+            <div class="stat-badge"><div class="stat-number">18个</div><div class="stat-label">月深度调研</div></div>
+            <div class="stat-badge"><div class="stat-number">15座</div><div class="stat-label">城市走访</div></div>
+            <div class="stat-badge"><div class="stat-number">108个</div><div class="stat-label">乡镇街道调研</div></div>
+            <div class="stat-badge"><div class="stat-number">84场</div><div class="stat-label">交流研讨</div></div>
+            <div class="stat-badge"><div class="stat-number">300+家</div><div class="stat-label">上下游产业</div></div>
         </div>
     </div>
 
-    <!-- ========= 第一部分：十二道实地走访工序（嵌入真实图片） ========= -->
+    <!-- ========= 第一部分：十二道实地走访工序（图片位于 images/ 文件夹） ========= -->
     <div class="section">
         <div class="section-title">🚶 实地走访·十二程 <span>十二个关键足迹·匠心寻访</span></div>
         <div class="process-grid" id="fieldTripGrid"></div>
     </div>
 
-    <!-- ========= 第二部分：九宫格调研照片（嵌入9张调研JPG图片） ========= -->
+    <!-- ========= 第二部分：九宫格调研照片（图片位于 images/ 文件夹） ========= -->
     <div class="section">
         <div class="section-title">📸 深山调研·九宫格 <span>十八个月 · 实地影像</span></div>
         <div class="grid-gallery">
@@ -448,7 +448,7 @@
         </div>
     </div>
 
-    <!-- ========= 第三部分：轮转照片（嵌入9张实践JPG图片） ========= -->
+    <!-- ========= 第三部分：轮转照片（图片位于 images/ 文件夹） ========= -->
     <div class="stats-carousel" style="margin-top: 0;">
         <div style="margin-top: 4px; padding: 0 12px;">
             <div style="font-size:0.85rem; font-weight:700; color:#2A7F6E; margin-left: 12px; margin-bottom: 12px;">🔄 轮转·实践影像志（调研纪实轮播）</div>
@@ -476,39 +476,40 @@
 
 <script>
     (function() {
-        // ======================= 1. 十二道实地走访工序（使用您提供的真实图片名称） =======================
-        // 实地图片映射：实地1天目.JPG, 实地2人大.jpg, 实地3王一平.jpg ... 共12张
+        // ======================= 1. 十二道实地走访工序 =======================
+        // 实地走访地点名称和描述（与图片一一对应）
         const fieldTripSteps = [
-            { name: "天目山·古法源头探访", desc: "深入天目山麓，探寻山核桃古法种植发源地，记录百年老树与生态智慧。" },
-            { name: "人大代表联络站·座谈交流", desc: "与当地人大代表及农技专家座谈，共议山核桃产业振兴与非遗保护。" },
-            { name: "王一平非遗工坊·匠心传承", desc: "拜访非遗传承人王一平，记录古法敲壳、水浮等濒危技艺。" },
-            { name: "昌西·古法加工集群调研", desc: "走访昌西传统加工坊，调研手工敲壳、炭火烘烤等工序细节。" },
-            { name: "印象山核桃·品牌体验馆", desc: "参观印象山核桃主题体验馆，学习品牌化运营与消费者触达策略。" },
-            { name: "玉屏村共富工坊·助农签约", desc: "与玉屏村签订共富协议，推动非遗工坊标准化与农户增收。" },
-            { name: "高山日晒场·古法观察", desc: "在高山日晒场记录三日曝晒工艺，与农户共同翻晒，体验阳光赋予山核桃的香气。" },
-            { name: "鸡血石文化街·品牌联动调研", desc: "走访鸡血石文化街，探索农文旅融合与山核桃品牌跨界可能。" },
-            { name: "金土地合作社·产销对接", desc: "调研金土地农业合作社，了解山核桃统购统销模式与品牌化难点。" },
-            { name: "浙江农林大学·产学研合作", desc: "与浙江农林大学专家团队交流，探讨山核桃深加工与品质检测技术。" },
-            { name: "岛石镇·高山基地勘测", desc: "实地勘测岛石镇高山核桃林土壤与气候，建立品质溯源档案。" },  
-            { name: "大明山·生态保护区调研", desc: "深入大明山生态保护区，考察野生山核桃资源保护与可持续开发。" }
+            { name: "天目匠心馆", desc: "与传统手工艺者面对面交流，了解“天目匠心馆”“数智+匠心”等新型推广模式。" },
+            { name: "义乌副食品市场", desc: "深入义乌副食品市场，与临安山核桃商户对接，调研非遗产品市场流通情况。" },
+            { name: "清凉峰镇政府", desc: "拜访清凉峰镇政府农林管理主任王一平，感受山核桃的文化底蕴。" },
+            { name: "昌西食品工坊", desc: "走访昌西传统加工坊，学习传统工艺从临安走向全国的新路径。" },
+            { name: "姚生记数字化观光工厂", desc: "参观印象山核桃主题体验馆，学习品牌化运营与消费者触达策略。" },
+            { name: "玉屏村山核桃共富工坊", desc: "与玉屏村签订共富协议，推动非遗工坊标准化与农户增收。" },
+            { name: "昌西共富工坊", desc: "在高山日晒场记录三日曝晒工艺，与农户共同翻晒，体验阳光赋予山核桃的香气。" },
+            { name: "义乌农贸城副食品市场", desc: "一线走访副食品市场，探索农文旅融合与山核桃品牌跨界可能。" },
+            { name: "临安金土地食品有限公司", desc: "调研临安金土地食品有限公司，了解山核桃统购统销模式与品牌化难点。" },
+            { name: "浙江农林大学", desc: "参观浙江农林大学森林食物资源挖掘与利用全国重点实验室，探讨山核桃深加工与品质检测技术。" },
+            { name: "岛石镇共富工坊", desc: "实地勘测岛石镇核桃林土壤与气候，建立品质溯源档案。" },  
+            { name: "杭州德胜食品市场", desc: "考察杭州特色副食品市场，调研副食品市场产销链路。" }
         ];
 
-        // 真实图片文件名映射（根据您截图中的实际名称）
+        // 实地图片文件名映射（全部存放在 images 文件夹下）
         const tripImageMap = {
-            0: "实地1天目.JPG",
-            1: "实地2店主访谈.jpg",
-            2: "实地3王一平.jpg",
-            3: "实地4昌西.jpg",
-            4: "实地5印象山核桃.jpg",
-            5: "实地6玉平村.jpg",
-            6: "实地7高山.jpg",
-            7: "实地8义乌市场.jpg",
-            8: "实地9金土地.jpg",
-            9: "实地10农林.jpg",
-            10: "实地11岛石镇.jpg",
-            11: "实地12义乌店主访谈.jpg"
+            0: "images/实地1天目.JPG",
+            1: "images/实地2店主访谈.jpg",
+            2: "images/实地3王一平.jpg",
+            3: "images/实地4昌西.jpg",
+            4: "images/实地5印象山核桃.jpg",
+            5: "images/实地6玉平村.jpg",
+            6: "images/实地7高山.jpg",
+            7: "images/实地8义乌市场.jpg",
+            8: "images/实地9金土地.jpg",
+            9: "images/实地10农林.jpg",
+            10: "images/实地11岛石镇.jpg",
+            11: "images/实地12义乌店主访谈.jpg"
         };
 
+        // SVG降级占位（仅当图片加载失败时显示）
         function getTripPlaceholderSVG(stepName, stepNumber) {
             const shortName = stepName.length > 16 ? stepName.slice(0,14)+".." : stepName;
             const svgString = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" width="100%" height="100%"><rect width="240" height="200" fill="#E4F3EF" rx="16" ry="16"/><circle cx="120" cy="80" r="44" fill="#2A7F6E" stroke="#236b5c" stroke-width="2"/><text x="120" y="90" text-anchor="middle" fill="#FFFFFF" font-size="42" dy=".3em">🚶</text><text x="120" y="140" text-anchor="middle" fill="#236b5c" font-size="15" font-weight="bold">${stepNumber}</text><text x="120" y="170" text-anchor="middle" fill="#3EA88F" font-size="11" font-weight="500">${shortName}</text></svg>`;
@@ -520,7 +521,7 @@
             fieldTripSteps.forEach((step, idx) => {
                 const stepNumber = (idx+1).toString().padStart(2,'0');
                 const realImg = tripImageMap[idx];
-                let imgSrc = realImg ? `./${realImg}` : getTripPlaceholderSVG(step.name, stepNumber);
+                let imgSrc = realImg || getTripPlaceholderSVG(step.name, stepNumber);
                 
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'process-item';
@@ -549,20 +550,18 @@
             });
         }
 
-        // ======================= 2. 九宫格调研照片（9张JPG图片：调研1~8.jpg + 调查5.jpg） =======================
-        // 根据截图：调研1.jpg, 调研2.jpg, 调研3.jpg, 调研4.jpg, 调查5.jpg, 调研6.jpg, 调研8.jpg
-        // 共7张？但您说九个调研转化成了jpg，截图显示有调研1-4、调查5、调研6、调研8，缺少调研7和调研9？为了完整显示九宫格，补充占位描述
-        // 实际您的文件夹中应有9张，我按照常见命名规则补充调研7.jpg和调研9.jpg，您可根据实际文件名调整
+        // ======================= 2. 九宫格调研照片（9张JPG图片：调研1.jpg ~ 调研9.jpg） =======================
+        // 根据您提供的文件名：调研1.jpg 至 调研9.jpg，共9张，全部存放在 images 文件夹下
         const researchPhotos = [
-            { file: "调研1.jpg", caption: "临安山核桃核心产区·初次调研" },
-            { file: "调研2.jpg", caption: "非遗工坊·记录古法水浮技艺" },
-            { file: "调研3.jpg", caption: "走访老匠人·口述非遗历史" },
-            { file: "调研4.jpg", caption: "义乌副食品市场·供应链调研" },
-            { file: "调研5.jpg", caption: "岛石镇高山老树·挂牌保护" },
-            { file: "调研6.jpg", caption: "玉屏村共富工坊·签约助农" },
-            { file: "调研7.jpg", caption: "年货节展销·品牌推介现场" },
-            { file: "调研8.jpg", caption: "砍大农场基地·共建核伙人林" },
-            { file: "调研9.jpg", caption: "十八个月调研总结·成果发布" }
+            { file: "images/调研1.jpg", caption: "参观浙江农林大学重点实验室" },
+            { file: "images/调研2.jpg", caption: "实地走访中国坚果炒货食品城" },
+            { file: "images/调研3.jpg", caption: "考察杭州姚生记食品有限公司" },
+            { file: "images/调研4.jpg", caption: "参与砍大农场助农直播" },
+            { file: "images/调研5.jpg", caption: "签约大学生社会实践基地" },
+            { file: "images/调研6.jpg", caption: "学习非遗山核桃加工技艺" },
+            { file: "images/调研7.jpg", caption: "山核桃非遗直播课程培训" },
+            { file: "images/调研8.jpg", caption: "一线考察砍大农场基地" },
+            { file: "images/调研9.jpg", caption: "非遗人讲解山核桃加工技艺" }
         ];
 
         function getResearchFallbackSVG(title) {
@@ -578,7 +577,7 @@
                 card.className = 'research-card';
                 const imgEl = document.createElement('img');
                 imgEl.className = 'research-img';
-                imgEl.src = `./${photo.file}`;
+                imgEl.src = photo.file;
                 imgEl.alt = photo.caption;
                 imgEl.loading = "lazy";
                 imgEl.onerror = function() {
@@ -598,15 +597,15 @@
 
         // ======================= 3. 轮转照片（9张实践JPG图片：实践1.jpg ~ 实践9.jpg） =======================
         const carouselItems = [
-            { img: "实践1.jpg", caption: "参观临安坚果工厂 · 探索现代化加工" },
-            { img: "实践2.jpg", caption: "体验非遗手敲技艺 · 古法十八敲" },
-            { img: "实践3.jpg", caption: "签订砍大农场基地 · 共建核伙人林" },
-            { img: "实践4.jpg", caption: "走访义乌副食品市场 · 调研山核桃供销链" },
-            { img: "实践5.jpg", caption: "竹团队成员大合照 · 核伙人全家福" },
-            { img: "实践6.jpg", caption: "布置义乌年货节现场 · 品牌推介助农" },
-            { img: "实践7.jpg", caption: "走访玉屏村共富工坊 · 共探振兴之路" },
-            { img: "实践8.jpg", caption: "调研临安岛石镇高山老树 · 品种保护" },
-            { img: "实践9.jpg", caption: "团队总结会 · 十八个月成果分享" }
+            { img: "images/实践1.jpg", caption: "参观临安金土地临坚果工厂" },
+            { img: "images/实践2.jpg", caption: "昌西山区培育新农人李琦" },
+            { img: "images/实践3.jpg", caption: "走访浙江农林大学现代化实验室" },
+            { img: "images/实践4.jpg", caption: "临安山核桃礼盒打包现场" },
+            { img: "images/实践5.jpg", caption: "实地考察义乌农贸城副食品市场" },
+            { img: "images/实践6.jpg", caption: "布置义乌年货节现场" },
+            { img: "images/实践7.jpg", caption: "展销临安山核桃特色产品" },
+            { img: "images/实践8.jpg", caption: "深入学习古法工艺标准化制作" },
+            { img: "images/实践9.jpg", caption: "团队实地调研山核桃产销链路" }
         ];
 
         function getCarouselFallbackSVG(title) {
@@ -622,7 +621,7 @@
                 card.className = 'carousel-card';
                 const img = document.createElement('img');
                 img.className = 'carousel-img';
-                img.src = `./${item.img}`;
+                img.src = item.img;
                 img.alt = item.caption;
                 img.loading = "lazy";
                 img.onerror = function() {
@@ -640,7 +639,7 @@
             });
         }
 
-        console.log("✅ 深山核伙人·完整图片嵌入版 | 十二张实地图片 + 九张调研九宫格 + 九张实践轮转图片 已全部匹配");
+        console.log("✅ 深山核伙人·图片路径修正版 | 所有图片指向 images/ 文件夹 | 十二张实地 + 九张调研九宫格 + 九张实践轮转");
     })();
 </script>
 </body>
